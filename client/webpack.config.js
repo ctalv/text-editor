@@ -8,8 +8,6 @@ module.exports = () => {
 
   return {
     // TODO: Add and configure workbox plugins for a service worker and manifest file.
-
-
     // entry point for files
     mode: 'development',
     entry: {
@@ -50,6 +48,7 @@ module.exports = () => {
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
+          // add favicon
         ],
       }),
     ],
