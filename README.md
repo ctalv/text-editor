@@ -6,6 +6,8 @@
 This is a node run application that allows a user to add text. 
 
 Future development will be making it into a functioning Progressive Web Application that will pull a users saved text.
+
+https://ctalv-text-editor-app-f838c65a06f3.herokuapp.com/
     
 ## Table of Contents 
     
