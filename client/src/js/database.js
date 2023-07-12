@@ -8,11 +8,12 @@ const initdb = async () =>
         return;
       }
       db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
+      objectStore.createIndex('content', 'content', { unique: false });
       console.log('jate database created');
     },
   });
 
-// TODO: Add logic to a method that accepts some content a25nd adds it to the database
+// TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
   console.error('PUT from the database');
 
@@ -26,8 +27,9 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Use the .add() method on the store and pass in the content.
-  const request = store.add({
-    // name: name, home_phone: home, cell_phone: cell, email: email 
+  const request = store.put({
+    id: 1,
+    content: content
   });
 
   // Get confirmation of the request.
@@ -50,7 +52,7 @@ export const getDb = async () => {
 
   // Use the .getAll() method to get all data in the database.
   const request = store.getAll();
-
+  console.log(request)
   // Get confirmation of the request.
   const result = await request;
   console.log('result.value', result);
